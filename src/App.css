@@ -1,12 +1,23 @@
 .App {
   position: relative;
   padding: 20px;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  background-color: #1a1a2e;
+  color: #eaeaea;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding-top: 50px;
 }
 
 .react-logo {
   position: absolute;
-  top: 10px;
+  top: 4px;
   right: 0px;
   width: 40px;
   height: 40px;
@@ -15,48 +26,112 @@
 
 .github-logo {
   position: absolute;
-  top: 16px;
+  top: 10px;
   right: 40px;
   width: 25px;
   height: 25px;
 }
+.github-logo:hover {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  width: 30px;
+  height: 30px;
+}
 
 .react-logo:hover {
   transform: rotate(360deg);
+  width: 45px;
+  height: 45px;
 }
-form {
-  margin: 20px 0;
+.scrollable-div {
+  width: 480px;
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-
-input {
-  padding: 10px;
-  font-size: 16px;
-  width: 200px;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: 2px solid #162447;
-  background-color: #1f4068;
-  color: #eaeaea;
-  transition: background-color 0.3s ease;
+.scrollable-div::-webkit-scrollbar {
+  display: none;
 }
-
-input:focus {
-  outline: none;
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #0f3460;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  z-index: 101;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 24px;
 }
 
-.App {
-  text-align: center;
+.menu-line {
+  width: 24px;
+  height: 2px;
+  background-color: white;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #0f3460;
+  transition: left 0.3s ease;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.user-info {
+  color: white;
   padding: 20px;
-  font-family: "Arial", sans-serif;
-  background-color: #1a1a2e;
+  margin-top: 30px;
+  background-color: #162447;
+}
+
+.close-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #1f4068;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar {
+  scrollbar-width: none;
+}
+
+#title {
+  margin: 0;
+  font-size: 24px;
   color: #eaeaea;
-  min-height: 100vh;
+  position: absolute;
+  left: 43%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 form {
@@ -94,6 +169,11 @@ button {
 
 button:hover {
   background-color: #0f3460;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 li {

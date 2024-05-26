@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import List from "./components/list";
 import Input from "./components/input";
 import "./App.css";
@@ -7,6 +7,9 @@ import githubLogo from "./github.svg";
 
 function App() {
   const [items, setItems] = useState([]); // useState allows creating a variable and a function to change its value
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const sidebarRef = useRef(null);
+  const menuIconRef = useRef(null);
 
   const addItem = (item) => {
     setItems([...items, { text: item, completed: false }]); // the expression ...items adds the item and repeats the existing list of items, instead of just adding a new one
@@ -24,11 +27,47 @@ function App() {
     setItems(newItems);
   };
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  useEffect(() => {
+    let initialClick = true;
+    document.title = "React To-Do App";
+    const handleClickOutside = (event) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target) &&
+        menuIconRef.current &&
+        !menuIconRef.current.contains(event.target)
+      ) {
+        if (!initialClick) {
+          setSidebarOpen(false);
+        } else {
+          initialClick = false;
+        }
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="App">
       <header>
+        <div className="menu-icon" onClick={toggleSidebar} ref={menuIconRef}>
+          <div className="menu-line"></div>
+          <div className="menu-line"></div>
+          <div className="menu-line"></div>
+        </div>
+        <h1 id="title">React To-Do List</h1>
         <img src={reactLogo} className="react-logo" alt="React Logo" />
-
         <a
           href="https://github.com/ashcrysis"
           target="_blank"
@@ -37,9 +76,21 @@ function App() {
           <img src={githubLogo} className="github-logo" alt="GitHub Logo" />
         </a>
       </header>
-      <h1 id="title">To-Do List</h1>
+
+      <aside
+        className={`sidebar ${sidebarOpen ? "open" : ""}`}
+        ref={sidebarRef}
+      >
+        <div className="user-info">Username</div>
+        <button onClick={toggleSidebar} className="close-button">
+          X
+        </button>
+      </aside>
+
       <Input addItem={addItem} />
-      <List items={items} toggleItem={toggleItem} deleteItem={deleteItem} />
+      <div class="scrollable-div">
+        <List items={items} toggleItem={toggleItem} deleteItem={deleteItem} />
+      </div>
     </div>
   );
 }
