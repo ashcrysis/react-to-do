@@ -12,7 +12,8 @@ function App() {
   const menuIconRef = useRef(null);
 
   const addItem = (item) => {
-    if (item.length >= 5) {
+    const trimmedItem = item.trim();
+    if (trimmedItem.length >= 5) {
       setItems([...items, { text: item, completed: false }]); // the expression ...items adds the item and repeats the existing list of items, instead of just adding a new one
     } else {
       window.alert("Task should be at least 5 characters long.");
