@@ -66,7 +66,6 @@ function App() {
           <div className="menu-line"></div>
           <div className="menu-line"></div>
         </div>
-        <h1 id="title">React To-Do List</h1>
         <img src={reactLogo} className="react-logo" alt="React Logo" />
         <a
           href="https://github.com/ashcrysis"
