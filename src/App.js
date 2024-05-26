@@ -90,6 +90,14 @@ function App() {
       <div class="scrollable-div">
         <List items={items} toggleItem={toggleItem} deleteItem={deleteItem} />
       </div>
+      <a
+        href="https://www.behance.net/gallery/41263635/Dragon-Cave-gif-animation"
+        target="_blank"
+        className="background-credit"
+        rel="noreferrer"
+      >
+        Background Image Artist
+      </a>
     </div>
   );
 }
