@@ -226,7 +226,7 @@ li.completed {
 
 li:hover {
   transform: scale(1.02);
-  background-color: #3ea895;
+  background-color: #414372;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -240,7 +240,7 @@ li button {
 }
 
 li button:hover {
-  background-color: #bbd74f;
+  background-color: #6b6bc3;
 }
 
 li button.complete {
