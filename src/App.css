@@ -64,7 +64,7 @@
   height: 45px;
 }
 .scrollable-div {
-  width: 80%;
+  width: 90%;
   max-width: 480px;
   height: 300px;
   overflow-y: scroll;
