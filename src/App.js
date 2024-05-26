@@ -66,7 +66,6 @@ function App() {
           <div className="menu-line"></div>
           <div className="menu-line"></div>
         </div>
-        <h1 id="title">React To-Do List</h1>
         <img src={reactLogo} className="react-logo" alt="React Logo" />
         <a
           href="https://github.com/ashcrysis"
@@ -91,6 +90,14 @@ function App() {
       <div class="scrollable-div">
         <List items={items} toggleItem={toggleItem} deleteItem={deleteItem} />
       </div>
+      <a
+        href="https://www.behance.net/gallery/41263635/Dragon-Cave-gif-animation"
+        target="_blank"
+        className="background-credit"
+        rel="noreferrer"
+      >
+        Background Image Artist
+      </a>
     </div>
   );
 }

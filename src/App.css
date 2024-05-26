@@ -2,8 +2,12 @@
   position: relative;
   padding: 20px;
   text-align: center;
-  font-family: "Arial", sans-serif;
-  background-color: #1a1a2e;
+  font-family: Georgia, serif;
+  background-image: url("./bg.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
   color: #eaeaea;
   min-height: 100vh;
   display: flex;
@@ -14,7 +18,22 @@
   height: 100vh;
   padding-top: 50px;
 }
+.background-credit {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
 
+.background-credit:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
 .react-logo {
   position: absolute;
   top: 4px;
@@ -58,7 +77,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #0f3460;
+  background-color: #31264a;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -84,9 +103,9 @@ header {
   position: fixed;
   top: 0;
   left: -250px;
-  width: 250px;
+  width: 150px;
   height: 100%;
-  background-color: #0f3460;
+  background-color: #31264a;
   transition: left 0.3s ease;
   z-index: 100;
   overflow-y: auto;
@@ -98,18 +117,20 @@ header {
 
 .user-info {
   color: white;
-  padding: 20px;
-  margin-top: 30px;
-  background-color: #162447;
+  padding: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  background-color: #161730;
 }
 
 .close-button {
   position: absolute;
   bottom: 20px;
   left: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   transform: translateX(-50%);
   padding: 10px 20px;
-  background-color: #1f4068;
+  background-color: #161730;
   color: white;
   border: none;
   cursor: pointer;
@@ -123,17 +144,6 @@ header {
   scrollbar-width: none;
 }
 
-#title {
-  margin: 0;
-  font-size: 24px;
-  color: #eaeaea;
-  position: absolute;
-  left: 43%;
-  transform: translateX(-50%);
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 form {
   margin: 20px 0;
 }
@@ -144,42 +154,47 @@ input {
   width: 200px;
   margin-right: 10px;
   border-radius: 5px;
-  border: 2px solid #162447;
-  background-color: #1f4068;
-  color: #eaeaea;
+  border: 2px solid #31264a;
+  background-color: #161730;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
   transition: background-color 0.3s ease;
 }
 
 input:focus {
   outline: none;
-  background-color: #0f3460;
+  background-color: #423560;
 }
 
 button {
   padding: 10px 20px;
   font-size: 16px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
   cursor: pointer;
   margin-left: 5px;
   border-radius: 5px;
-  border: 2px solid #162447;
-  background-color: #162447;
+  border: 2px solid #31264a;
+  background-color: #31264a;
   color: #eaeaea;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #0f3460;
+  background-color: #161730;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 li {
   padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   margin: 10px 0;
-  background-color: #1f4068;
+  background-color: #31264a;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
@@ -196,11 +211,12 @@ li .text {
 
 li .buttons {
   display: flex;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   gap: 10px;
 }
 
 li.completed {
-  background-color: #162447;
+  background-color: #161730;
   color: #ffffff;
   text-decoration: line-through;
   transform: scale(0.98);
@@ -210,28 +226,29 @@ li.completed {
 
 li:hover {
   transform: scale(1.02);
-  background-color: #2a588f;
+  background-color: #3ea895;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 li button {
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
-  background-color: #0f3460;
+  background-color: #161730;
   color: #eaeaea;
   transition: background-color 0.3s ease;
 }
 
 li button:hover {
-  background-color: #00fffb;
+  background-color: #bbd74f;
 }
 
 li button.complete {
-  background-color: #6ab04c;
+  background-color: #bbd74f;
 }
 
 li button.complete:hover {
-  background-color: #5aa23e;
+  background-color: #bbd74f;
 }
 
 li button.undo {
